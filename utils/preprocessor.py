@@ -1,7 +1,7 @@
-import json
-import re
-import os
 import glob
+import json
+import os
+import re
 
 
 def merge_jsons(path="data/processed"):
@@ -45,3 +45,5 @@ def clean_sentences(sentences):
         sentences = [sentence.replace(char, "") for sentence in sentences]
     clean_sentences = [sentence for sentence in sentences if len(sentence) > 10]
     return clean_sentences
+
+merge_jsons()
