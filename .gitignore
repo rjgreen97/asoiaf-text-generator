@@ -1,6 +1,5 @@
 # Repo specific
 model.pth
-utils/__pycache__/preprocessor.cpython-310.pyc
 data/processed/*_sentences.json
 
 # Byte-compiled / optimized / DLL files
