@@ -49,3 +49,7 @@ class PreProcessor:
                 merged.extend(json.load(json_file))
         with open("data/processed/all_books.json", "w") as merged_json_files:
             json.dump(merged, merged_json_files, ensure_ascii=False)
+
+
+if __name__ == "__main__":
+    preproccesor = PreProcessor()
