@@ -1,15 +1,8 @@
 import datetime
-import os
 
 import torch
 from torch.utils.data import DataLoader
-from transformers import (
-    AutoModelForCausalLM,
-    AutoTokenizer,
-    IntervalStrategy,
-    Trainer,
-    TrainingArguments,
-)
+from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments
 
 from src.data.asoiaf_dataset_builder import ASOIAFDatasetBuilder
 from src.training.training_session_arg_parser import TrainingSessionArgParser
