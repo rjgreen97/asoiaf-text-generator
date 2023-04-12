@@ -4,7 +4,7 @@ from transformers import AutoTokenizer
 
 
 class ASOIAFDataset(Dataset):
-    def __init__(self, model_name, df, max_lenth=512):
+    def __init__(self, model_name, df, max_lenth=256):
         self.model_name = model_name
         self.df = df
         self.max_length = max_lenth
@@ -22,7 +22,7 @@ class ASOIAFDataset(Dataset):
         return len(self.df)
 
     def __getitem__(self, index):
-        sentence = self.df.iloc[index]["sentence"]
+        sentence = self.df["sentences"][index]
         encodings_dict = self.encode_text(sentence)
         return {
             "sentence": sentence,

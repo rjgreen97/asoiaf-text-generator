@@ -11,7 +11,6 @@ class ASOIAFDatasetBuilder:
         self.val_percent = val_percent
 
     def build(self):
-        print(f"Reading data from specified filepath: {self.data_filepath}")
         df = pd.read_json(self.data_filepath)
         df = df.rename(columns={0: "sentences"})
         dataset = ASOIAFDataset(self.model_name, df)
