@@ -18,10 +18,11 @@ def clean_sentences(sentences):
     clean_sentences = [sentence for sentence in sentences if len(sentence) > 10]
     return clean_sentences
 
+
 def sentences_to_json(sentences):
-
-
     with open("data/processed/sentences.json", "w", encoding="utf-8") as sentences_json:
         json.dump(sentences, sentences_json, ensure_ascii=False)
 
-book_to_sentences("data/books/stormofswords.txt")
+
+if __name__ == "__main__":
+    book_to_sentences("data/books/gameofthrones.txt")
