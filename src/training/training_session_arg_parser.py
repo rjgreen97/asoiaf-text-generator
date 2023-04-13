@@ -20,7 +20,7 @@ class TrainingSessionArgParser:
             help="HuggingFace CausalLM pre-trained model to be fine tuned",
         )
         self.parser.add_argument(
-            "--epochs",
+            "--num_epochs",
             type=int,
             default=64,
             help="Number of epochs to train the model",
