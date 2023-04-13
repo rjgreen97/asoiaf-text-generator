@@ -8,6 +8,11 @@ from src.data.asoiaf_dataset_builder import ASOIAFDatasetBuilder
 from src.training.training_session_arg_parser import TrainingSessionArgParser
 
 
+print(torch.cuda.get_device_name())
+print(torch.__version__)
+print(torch.version.cuda)
+
+
 class TrainingSession:
     def __init__(self, args):
         self.args = args
@@ -17,6 +22,7 @@ class TrainingSession:
             eos_token="<|end_of_sentence|>",
             pad_token="<|pad|>",
         )
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     def run(self):
         self.create_datasets()
@@ -40,7 +46,9 @@ class TrainingSession:
         )
 
     def create_model(self):
-        self.model = AutoModelForCausalLM.from_pretrained(self.args.model_name)
+        self.model = AutoModelForCausalLM.from_pretrained(self.args.model_name).to(
+            self.device
+        )
         self.model.resize_token_embeddings(len(self.tokenizer))
 
     def create_trainer(self):
@@ -48,7 +56,7 @@ class TrainingSession:
         training_args = TrainingArguments(
             output_dir=f"./models/{self.args.model_name}/{time}",
             num_train_epochs=self.args.num_epochs,
-            per_device_train_batch_size=self.args.batch_size,
+            per_device_train_batch_size=16,
         )
         self.trainer = Trainer(
             model=self.model,

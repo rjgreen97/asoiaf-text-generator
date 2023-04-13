@@ -1,5 +1,5 @@
 # Repo specific
-model.pth
+models/
 data/processed/*_sentences.json
 
 # Byte-compiled / optimized / DLL files
