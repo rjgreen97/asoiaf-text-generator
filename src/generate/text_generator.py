@@ -6,9 +6,10 @@ class TextGenerator:
     def __init__(self, model_name, model_path, max_length=300):
         self.max_length = max_length
         self.model_name = model_name
+        self.bos_token = "<|beginning_of_sentence|>"
         self.tokenizer = AutoTokenizer.from_pretrained(
             self.model_name,
-            bos_token="<|beginning_of_sentence|>",
+            bos_token=self.bos_token,
             eos_token="<|end_of_sentence|>",
             pad_token="<|pad|>",
         )
@@ -17,7 +18,7 @@ class TextGenerator:
         self.model.eval()
 
     def generate(self, prompt):
-        prompt = self.tokenizer.bos_token_id + prompt
+        prompt = self.bos_token + prompt
         input_ids = self.tokenizer(prompt, return_tensors="pt").input_ids
 
         generated_text_output = self.model.generate(
