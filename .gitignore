@@ -1,6 +1,6 @@
 # Repo specific
 models/
-data/processed/*_sentences.json
+data/processed/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
