@@ -14,7 +14,7 @@ pip install -r requirements.txt
 **2) Fine Tune:**
 
     bin/train.sh --data_filepath --model_name
-* `--data_filepath` defaults to a json file containing all the text from the ASOIAF series broken into sentences. Feel free to use your own data instead, which can be prepaired by using `bin/preprocess.sh`. If you are using your own text data to fine tune, you will need to alter some filepaths in `utils/preprocessor.py` to match its location.
+* `--data_filepath` defaults to a json file containing all the text from the ASOIAF series broken into sentences. Feel free to use your own data instead, which can be prepaired by using `bin/preprocess.sh`. If you are using your own data to fine tune, you will need to alter some filepaths in `utils/preprocessor.py` to match its location.
 * `--model_name` defaults to `"facebook/opt-125m"`, but use any model you like.
 
 **3) Generate Text:**
