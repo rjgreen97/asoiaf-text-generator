@@ -16,6 +16,7 @@ pip install -r requirements.txt
     bin/train.sh --data_filepath --model_name
 * `--data_filepath` defaults to a json file containing all the text from the ASOIAF series broken into sentences. Feel free to use your own data instead, which can be prepaired by using `bin/preprocess.sh`. If you are using your own data to fine tune, you will need to alter some filepaths in `utils/preprocessor.py` to match its directory structure.
 * `--model_name` defaults to `"facebook/opt-125m"`, but use any model you like.
+* If you'd like more control over the training process, there are multiple hyperparameters you can easily tweak (which can be found in `src/training/training_session_arg_parser.py`), but they all have good defaults.
 
 **3) Generate Text:**
 
