@@ -5,19 +5,19 @@ A pre-trained transformer (`"facebook/opt-125m"` from HuggingFace) fine tuned on
 The model I used is relatively small in the world of LLMs, so feel free to explore larger models if you have the memory available. In addition, any book series or corpus of text could be used to fine-tune, so don't be afraid to experiment!
 
 # Usage
-**Install Requirements**
+**1) Install Requirements:**
 
 Built With: `Python 3.10`
 ```
 pip install -r requirements.txt
 ```
-**Fine Tuning:**
+**2) Fine Tune:**
 
     bin/train.sh --data_filepath --model_name
 * `--data_filepath` defaults to a json file containing all the text from the ASOIAF series broken into sentences. Feel free to use your own data instead, which can be prepaired by using the PreProcessor class in `utils/preprocessor.py`.
 * `--model_name` defaults to `"facebook/opt-125m"`, but use any model you like.
 
-**Generate Text**
+**3) Generate Text:**
 
     bin/generate.sh --model_path --model_name
 * `--model_path` is the filepath to the saved model checkpoint.
