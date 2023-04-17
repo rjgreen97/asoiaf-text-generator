@@ -14,7 +14,7 @@ pip install -r requirements.txt
 **2) Fine Tune:**
 
     bin/train.sh --data_filepath --model_name
-* `--data_filepath` defaults to a json file containing all the text from the ASOIAF series broken into sentences. Feel free to use your own data instead, which can be prepaired by using the PreProcessor class in `utils/preprocessor.py`.
+* `--data_filepath` defaults to a json file containing all the text from the ASOIAF series broken into sentences. Feel free to use your own data instead, which can be prepaired by using `bin/preprocess.sh`. You will need to alter some filepaths in `utils/preprocessor.py` to match the location of any different data you are using.
 * `--model_name` defaults to `"facebook/opt-125m"`, but use any model you like.
 
 **3) Generate Text:**
@@ -23,4 +23,4 @@ pip install -r requirements.txt
 * `--model_path` is the filepath to the saved model checkpoint.
 * `--model_name` defaults to `"facebook/opt-125m"`, but make sure to input the appropriate model name if you used something different. 
 
-The terminal will cue a user to submit a promt. The returning output will be the three best results the model generated based on the input prompt (the number of outputs can be changed by altering `num_return_sequences` in the generator).
+The terminal will cue a user to submit a promt. The returning output will be the three best results the model generated based on the input prompt.
