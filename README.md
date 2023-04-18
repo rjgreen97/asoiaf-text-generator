@@ -4,7 +4,7 @@ A pre-trained transformer (`"facebook/opt-125m"` from HuggingFace) fine tuned on
 
 The model I used is relatively small in the world of LLMs, so feel free to explore larger models if you have the memory available. In addition, any book series or corpus of text could be used to fine-tune, so don't be afraid to experiment!
 
-![alt text](assets/sad_jon.png)
+![alt text](assets/tyrions.png)
 
 # Usage
 **1) Install Requirements:**
