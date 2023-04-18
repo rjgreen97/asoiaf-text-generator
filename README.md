@@ -27,4 +27,4 @@ If you'd like more control over the training process, there are multiple hyperpa
 * `--model_path` is the filepath to the saved model checkpoint.
 * `--model_name` defaults to `"facebook/opt-125m"`, but make sure to input the appropriate model name if you used something different. 
 
-The terminal will cue a user to enter a promt. The returning output will be the three best results the model generated based on the input prompt.
+The terminal will cue a user to enter a promt. The returning output will be the best result the model generated based on the input prompt. If you'd like to generate more than a single output per promt, you can alter `num_return_sequences` in `src/generate/text_generator.py`.

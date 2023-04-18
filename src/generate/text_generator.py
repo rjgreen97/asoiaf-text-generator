@@ -17,7 +17,7 @@ class TextGenerator:
         self.model = AutoModelForCausalLM.from_pretrained(self.model_path)
         self.model.eval()
 
-    def generate(self, prompt, num_return_sequences=3):
+    def generate(self, prompt, num_return_sequences=1):
         prompt = self.bos_token + prompt
         input_ids = self.tokenizer(prompt, return_tensors="pt").input_ids
 
