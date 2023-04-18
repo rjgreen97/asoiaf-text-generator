@@ -10,7 +10,7 @@ class TrainingSessionArgParser:
         self.parser.add_argument(
             "--data_filepath",
             type=str,
-            default="data/processed/all_books.json",
+            default="data/processed/all_books_paragraphs.json",
             help="Path to the json file containing text data",
         )
         self.parser.add_argument(
