@@ -4,7 +4,7 @@ import json
 class JsonMerger:
     def __init__(
         self,
-        sentences_json_path="data/processed/all_books.json",
+        sentences_json_path="data/processed/all_books_sentences.json",
         paragraphs_json_path="data/processed/all_books_paragraphs.json",
         paragraph_length=5,
     ):
