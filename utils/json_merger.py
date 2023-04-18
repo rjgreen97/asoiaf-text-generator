@@ -2,11 +2,6 @@ import json
 
 
 class JsonMerger:
-    """
-    Use this class if you want to merge sentences from your json file
-    of sentences into paragraphs of a specific length for longer training inputs.
-    """
-
     def __init__(
         self,
         sentences_json_path="data/processed/all_books.json",

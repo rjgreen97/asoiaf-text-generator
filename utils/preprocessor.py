@@ -49,7 +49,7 @@ class PreProcessor:
         for file in files:
             with open(file, "r", encoding="utf-8") as json_file:
                 merged.extend(json.load(json_file))
-        with open("data/processed/all_books.json", "w") as merged_json_files:
+        with open("data/processed/all_books_sentences.json", "w") as merged_json_files:
             json.dump(merged, merged_json_files, ensure_ascii=False)
 
 
