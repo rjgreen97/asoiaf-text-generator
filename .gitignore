@@ -1,6 +1,5 @@
 # Repo specific
 models/
-data/processed/
 utils/__pycache__/preprocessor.cpython-310.pyc
 
 # Byte-compiled / optimized / DLL files
