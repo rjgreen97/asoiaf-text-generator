@@ -3,6 +3,8 @@ import json
 import os
 import re
 
+from utils.json_merger import JsonMerger
+
 
 class PreProcessor:
     def __init__(self):
@@ -10,7 +12,7 @@ class PreProcessor:
         self.preprocess_text("data/books/clashofkings.txt")
         self.preprocess_text("data/books/stormofswords.txt")
         self.preprocess_text("data/books/feastforcrows.txt")
-        self.merge_jsons()
+        self.write_json()
 
     def preprocess_text(self, book):
         with open(book, "r") as book:
@@ -41,7 +43,7 @@ class PreProcessor:
         clean_sentences = [sentence for sentence in sentences if len(sentence) > 10]
         return clean_sentences
 
-    def merge_jsons(self, path="data/processed"):
+    def write_json(self, path="data/processed"):
         files = glob.glob(os.path.join(path, "*.json"))
         merged = []
         for file in files:
@@ -53,3 +55,4 @@ class PreProcessor:
 
 if __name__ == "__main__":
     preproccesor = PreProcessor()
+    json_merger = JsonMerger()
