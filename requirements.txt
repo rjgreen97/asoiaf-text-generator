@@ -1,4 +1,4 @@
-transformers==4.28.0
+transformers==4.36.0
 torch==1.13.1
 torch-utils==0.1.2
 pandas==1.5.2
